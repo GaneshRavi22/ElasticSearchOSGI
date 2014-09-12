@@ -1,0 +1,26 @@
+#!/bin/sh
+
+LIBS=`find . -name "*jar"`
+CPATH=".,`echo ${LIBS} | sed -e 's/\.\///g' -e 's/ /,/g'`"
+BUNDLE_NAME=`cat osgi.manifest.txt | grep Bundle-SymbolicName| cut -f2 -d" "`
+BUNDLE_VERSION=`cat osgi.manifest.txt | grep Bundle-Version| cut -f2 -d" "`
+BUNDLE_EXPORT=`cat osgi.manifest.txt | grep Export-Package| cut -f2 -d" "`
+
+echo "Processing exports"
+
+EXPORTS=`(for file in lib/*.jar; do jar tf $file | sed -e 's#/[^/]*$##g' | grep -v "META"| sort | uniq; done) | sort | uniq | sed -e 's#/#.#g' | grep "${BUNDLE_EXPORT}" | sed -e 's/^/ /g' -e 's/$/,/g' -e '$ s/,$//'`
+
+if [ -f "${BUNDLE_NAME}-${BUNDLE_VERSION}-bundle.jar" ]
+then 
+  echo Removing old ${BUNDLE_NAME}-${BUNDLE_VERSION}-bundle.jar
+  rm "${BUNDLE_NAME}-${BUNDLE_VERSION}-bundle.jar"
+else
+  echo Creating new "${BUNDLE_NAME}-${BUNDLE_VERSION}-bundle.jar"
+fi
+
+cat osgi.manifest.txt  | grep -v "^Export-Package"> manifest.txt
+echo "Export-Package: ${EXPORTS}" >> manifest.txt
+echo "Bundle-ClassPath: ${CPATH}" >> manifest.txt
+
+jar cvfm ${BUNDLE_NAME}-${BUNDLE_VERSION}-bundle.jar manifest.txt ${LIBS}
+

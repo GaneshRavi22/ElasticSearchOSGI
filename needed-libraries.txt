@@ -1,0 +1,19 @@
+
+Copy the following libraries in the 'lib' directory:
+
+elasticsearch-1.1.2.jar
+lucene-analyzers-common-4.7.2.jar
+lucene-codecs-4.7.2.jar
+lucene-core-4.7.2.jar
+lucene-grouping-4.7.2.jar
+lucene-highlighter-4.7.2.jar
+lucene-join-4.7.2.jar
+lucene-memory-4.7.2.jar
+lucene-misc-4.7.2.jar
+lucene-queries-4.7.2.jar
+lucene-queryparser-4.7.2.jar
+lucene-sandbox-4.7.2.jar
+lucene-spatial-4.7.2.jar
+lucene-suggest-4.7.2.jar
+spatial4j-0.4.1.jar
+
