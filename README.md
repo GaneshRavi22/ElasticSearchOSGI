@@ -34,7 +34,7 @@ At this point you can simply run:
 
   ./mkbundle
 
-and you should find yourself with a shiny ** org.elasticsearch.osgi-1.1.2-bundle.jar ** library that you
+and you should find yourself with a shiny **org.elasticsearch.osgi-1.1.2-bundle.jar** library that you
 can import into your Eclipse workspace as a plugin to satisfy the
 dependency in the ElasticJasper plugin.
 
