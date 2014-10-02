@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.wedjaa.elasticsearch</groupId>
     <artifactId>es-osgi-bundle</artifactId>
-    <version>1.0</version>
+    <version>1.1.2.6</version>
     <name>ES-OSGI-Bundle</name>
     <description>This is an OSGi bundle of libraries used by ElasticJasper.</description>
 
@@ -15,16 +15,6 @@
 	<groupId>org.elasticsearch</groupId>
 	<artifactId>elasticsearch</artifactId>
 	<version>1.1.2</version>
-    </dependency>
-    <dependency>
-	<groupId>org.apache.logging.log4j</groupId>
-	<artifactId>log4j-1.2-api</artifactId>
-	<version>2.0.2</version>
-    </dependency>
-    <dependency>
-	<groupId>org.apache.httpcomponents</groupId>
-	<artifactId>httpclient</artifactId>
-	<version>4.3.5</version>
     </dependency>
     <dependency>
 	<groupId>org.json</groupId>
