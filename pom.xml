@@ -52,7 +52,7 @@
 			  <directory>.</directory>
 			  <includes>
 			    <include>manifest.txt</include>
-			    <include>org.elasticsearch.osgi-1.1.2-bundle.jar</include>
+			    <include>org.elasticsearch.osgi-*-bundle.jar</include>
 			  </includes>
 			  <followSymlinks>false</followSymlinks>
 			</fileset>
