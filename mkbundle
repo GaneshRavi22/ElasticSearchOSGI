@@ -4,11 +4,11 @@ LIBS=`find ./lib -name "*jar"`
 CPATH=".,`echo ${LIBS} | sed -e 's/\.\///g' -e 's/ /,/g'`"
 BUNDLE_NAME=`cat osgi.manifest.txt | grep Bundle-SymbolicName| cut -f2 -d" "`
 BUNDLE_VERSION=`cat osgi.manifest.txt | grep Bundle-Version| cut -f2 -d" "`
-BUNDLE_EXPORT=`cat osgi.manifest.txt | grep Export-Package| cut -f2 -d" "`
+BUNDLE_EXPORT=`cat osgi.manifest.txt | grep Export-Package| cut -f2 -d":" | sed -e 's/,\s*/\\\\|/g' -e 's/ //g'`
 
 echo "Processing exports"
 
-EXPORTS=`(for file in lib/*.jar; do jar tf $file | sed -e 's#/[^/]*$##g' | grep -v "META"| sort | uniq; done) | sort | uniq | sed -e 's#/#.#g' | grep "${BUNDLE_EXPORT}" | sed -e 's/^/ /g' -e 's/$/,/g' -e '$ s/,$//'`
+EXPORTS=`(for file in lib/*.jar; do jar tf $file | sed -e 's#/[^/]*$##g' | grep -v "META"| sort | uniq; done) | sort | uniq | sed -e 's#/#.#g' | grep -e "${BUNDLE_EXPORT}" | sed -e 's/^/ /g' -e 's/$/,/g' -e '$ s/,$//'`
 
 if [ -f "${BUNDLE_NAME}-${BUNDLE_VERSION}-bundle.jar" ]
 then 

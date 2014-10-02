@@ -6,8 +6,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.wedjaa.elasticsearch</groupId>
     <artifactId>es-osgi-bundle</artifactId>
-    <version>1.1.2.6</version>
-    <name>ES-OSGI-Bundle</name>
+    <version>1.1.2.7</version>
+    <name>org.elasticsearch.osgi</name>
     <description>This is an OSGi bundle of libraries used by ElasticJasper.</description>
 
   <dependencies>
@@ -24,7 +24,7 @@
   </dependencies>
 
     <build>
-        <defaultGoal>validate</defaultGoal>
+	<defaultGoal>validate</defaultGoal>
 	<plugins>
 		  <plugin>
 		    <artifactId>maven-clean-plugin</artifactId>
@@ -42,6 +42,7 @@
 			  <directory>.</directory>
 			  <includes>
 			    <include>manifest.txt</include>
+			    <include>osgi.manifest.txt</include>
 			    <include>org.elasticsearch.osgi-*-bundle.jar</include>
 			  </includes>
 			  <followSymlinks>false</followSymlinks>
@@ -49,6 +50,28 @@
 		      </filesets>
 		    </configuration>
 		</plugin>
+	        <plugin>
+		  <artifactId>maven-resources-plugin</artifactId>
+		  <version>2.6</version>
+		  <executions>
+		    <execution>
+		      <id>copy-resources</id>
+		      <phase>validate</phase>
+		      <goals>
+		        <goal>copy-resources</goal>
+		      </goals>
+		      <configuration>
+		        <outputDirectory>.</outputDirectory>
+		        <resources>          
+			  <resource>
+			    <directory>tpl</directory>
+			    <filtering>true</filtering>
+			  </resource>
+		        </resources>              
+		      </configuration>            
+		    </execution>
+		  </executions>
+	        </plugin>
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-dependency-plugin</artifactId>
