@@ -19,8 +19,8 @@ else
 fi
 
 cat osgi.manifest.txt  | grep -v "^Export-Package"> manifest.txt
-echo "Export-Package: ${EXPORTS}" >> manifest.txt
-echo "Bundle-ClassPath: ${CPATH}" >> manifest.txt
+echo "Export-Package: `echo ${EXPORTS} | sed -e 's/,/,\'$'\n /g'`" >> manifest.txt
+echo "Bundle-ClassPath: `echo ${CPATH} | sed -e 's/,/,\'$'\n /g'`" >> manifest.txt
 
 jar cvfm ${BUNDLE_NAME}-${BUNDLE_VERSION}-bundle.jar manifest.txt ${LIBS}
 
