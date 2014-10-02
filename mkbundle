@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LIBS=`find . -name "*jar"`
+LIBS=`find ./lib -name "*jar"`
 CPATH=".,`echo ${LIBS} | sed -e 's/\.\///g' -e 's/ /,/g'`"
 BUNDLE_NAME=`cat osgi.manifest.txt | grep Bundle-SymbolicName| cut -f2 -d" "`
 BUNDLE_VERSION=`cat osgi.manifest.txt | grep Bundle-Version| cut -f2 -d" "`
