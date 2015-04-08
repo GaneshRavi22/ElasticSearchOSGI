@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ElasticSearch 1.1.2 OSGI Bundle
+Bundle-Name: ElasticSearch ${project.version} OSGI Bundle
 Bundle-SymbolicName: ${project.name}
 Bundle-Version: ${project.version}
 Bundle-Vendor: Wedjaa Inc

@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.wedjaa.elasticsearch</groupId>
     <artifactId>es-osgi-bundle</artifactId>
-    <version>1.1.2.7</version>
+    <version>1.4.2.1</version>
     <name>org.elasticsearch.osgi</name>
     <description>This is an OSGi bundle of libraries used by ElasticJasper.</description>
 
@@ -14,7 +14,7 @@
     <dependency>
 	<groupId>org.elasticsearch</groupId>
 	<artifactId>elasticsearch</artifactId>
-	<version>1.1.2</version>
+	<version>1.4.2</version>
     </dependency>
     <dependency>
 	<groupId>org.json</groupId>
