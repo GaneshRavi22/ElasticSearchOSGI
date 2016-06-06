@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.wedjaa.elasticsearch</groupId>
 	<artifactId>es-osgi-bundle</artifactId>
-	<version>2.2.0</version>
+	<version>2.2.1-snapshot</version>
 	<name>org.elasticsearch.osgi</name>
 	<description>This is an OSGi bundle of libraries used by ElasticJasper.</description>
 
