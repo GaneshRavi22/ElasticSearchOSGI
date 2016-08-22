@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: ElasticSearch ${project.version} OSGI Bundle
-Bundle-SymbolicName: ${project.name}
-Bundle-Version: ${project.version}
-Bundle-Vendor: Wedjaa Inc
-Export-Package: org.elasticsearch, org.json
