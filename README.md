@@ -16,7 +16,7 @@ need to run:
 
 	mvn
 
-and you should find yourself with a shiny **es-osgi-bundle-2.2.1-snapshot.jar** library - in
+and you should find yourself with a shiny **es-osgi-bundle-2.3.3.jar** library - in
 the **target** directory - that you can import into your Eclipse workspace as a plugin to
 satisfy the dependency in the ElasticJasper plugin.
 
