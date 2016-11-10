@@ -16,12 +16,17 @@
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
-			<version>2.2.0</version>
+			<version>2.3.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20151123</version>
+		</dependency>
+		<dependency>
+			<groupId>com.floragunn</groupId>
+			<artifactId>search-guard-ssl</artifactId>
+			<version>2.3.3.15</version>
 		</dependency>
 	</dependencies>
 
@@ -61,7 +66,7 @@
 						<Embed-Transitive>true</Embed-Transitive>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.majorVersion}.${project.minorVersion}.${project.incrementalVersion}.${maven.build.timestamp}</Bundle-Version>
-						<Export-Package>org.elasticsearch.*, org.apache.lucene.*, com.spatial4j.*, org.joda.*, com.google.*, com.carrotsearch.*, org.apache.*, org.json.*, org.jboss.*, org.tartarus.*, com.fasterxml.*, com.ning.*, org.HdrHistogram, com.tdunning.math.stats
+						<Export-Package>org.elasticsearch.*, org.apache.lucene.*, com.spatial4j.*, org.joda.*, com.google.*, com.carrotsearch.*, org.apache.*, org.json.*, org.jboss.*, org.tartarus.*, com.fasterxml.*, com.ning.*, com.floragunn.searchguard.ssl.*, org.HdrHistogram, com.tdunning.math.stats
 						</Export-Package>
 						<Import-Package></Import-Package>
 						<Bundle-ClassPath>{maven-dependencies}</Bundle-ClassPath>
